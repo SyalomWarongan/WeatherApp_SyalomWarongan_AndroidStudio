@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.1.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.1.1)" variant="all" version="8.1.1">
+
+    <issue
+        id="LintError"
+        message="Unexpected failure during lint analysis of MainActivity.kt (this is a bug in lint or one of the libraries it depends on)&#xA;&#xA;Message: Unsupported API level 64&#xA;&#xA;The crash seems to involve the detector `com.android.tools.lint.checks.ApiDetector`.&#xA;You can try disabling it with something like this:&#xA;    android {&#xA;        lint {&#xA;            disable &quot;InlinedApi&quot;, &quot;ObsoleteSdkInt&quot;, &quot;NewApi&quot;, &quot;UnusedAttribute&quot;&#xA;        }&#xA;    }&#xA;&#xA;Stack: `IllegalStateException:ApiConstraint$SdkApiConstraint$Companion.toInternalApiLevel(ApiConstraint.kt:729)←ApiConstraint$SdkApiConstraint$Companion.toInternalApiLevel(ApiConstraint.kt:718)←ApiConstraint$SdkApiConstraint$Companion.createConstraintBits-qJGtvoU(ApiConstraint.kt:785)←ApiConstraint$SdkApiConstraint$Companion.createConstraint(ApiConstraint.kt:777)←ApiConstraint$SdkApiConstraint$Companion.createConstraint$default(ApiConstraint.kt:771)←ApiConstraint$Companion.atLeast(ApiConstraint.kt:305)←ApiConstraint$Companion.get(ApiConstraint.kt:218)←ApiDetector$Companion.getApiLevel(ApiDetector.kt:3329)←ApiDetector.visitAnnotationUsage(ApiDetector.kt:711)←AnnotationHandler.checkAnnotations(AnnotationHandler.kt:554)←AnnotationHandler.checkAnnotations(AnnotationHandler.kt:521)←AnnotationHandler.visitAnnotation(AnnotationHandler.kt:789)←UElementVisitor$DelegatingPsiVisitor.visitAnnotation(UElementVisitor.kt:1122)←UAnnotation.accept(UAnnotation.kt:69)←ImplementationUtilsKt.acceptList(implementationUtils.kt:14)←UMethod.accept(UMethod.kt:43)←ImplementationUtilsKt.acceptList(implementationUtils.kt:14)←AbstractKotlinUClass.accept(AbstractKotlinUClass.kt:99)←ImplementationUtilsKt.acceptList(implementationUtils.kt:14)←UFile.accept(UFile.kt:89)←UastLintUtilsKt.acceptSourceFile(UastLintUtils.kt:826)←UElementVisitor$visitFile$3.run(UElementVisitor.kt:267)←LintClient.runReadAction(LintClient.kt:1700)←LintDriver$LintClientWrapper.runReadAction(LintDriver.kt:2867)←UElementVisitor.visitFile(UElementVisitor.kt:264)←LintDriver$visitUastDetectors$1.run(LintDriver.kt:2165)←LintClient.runReadAction(LintClient.kt:1700)←LintDriver$LintClientWrapper.runReadAction(LintDriver.kt:2867)←LintDriver.visitUastDetectors(LintDriver.kt:2165)←LintDriver.visitUast(LintDriver.kt:2127)←LintDriver.runFileDetectors(LintDriver.kt:1379)←LintDriver.checkProject(LintDriver.kt:1144)←LintDriver.checkProjectRoot(LintDriver.kt:615)←LintDriver.access$checkProjectRoot(LintDriver.kt:170)←LintDriver$analyzeOnly$1.invoke(LintDriver.kt:441)←LintDriver$analyzeOnly$1.invoke(LintDriver.kt:438)←LintDriver.doAnalyze(LintDriver.kt:497)←LintDriver.analyzeOnly(LintDriver.kt:438)←LintCliClient$analyzeOnly$1.invoke(LintCliClient.kt:237)←LintCliClient$analyzeOnly$1.invoke(LintCliClient.kt:237)←LintCliClient.run(LintCliClient.kt:279)←LintCliClient.run$default(LintCliClient.kt:262)←LintCliClient.analyzeOnly(LintCliClient.kt:237)←Main.run(Main.java:1689)←Main.run(Main.java:275)←GeneratedMethodAccessor2264.invoke(null:-1)←DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)←Method.invoke(Method.java:568)←AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:98)←AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:87)←AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:62)←DefaultWorkerServer.execute(DefaultWorkerServer.java:63)←NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)←NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)←ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)←NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)←AbstractWorker$1.call(AbstractWorker.java:44)←AbstractWorker$1.call(AbstractWorker.java:41)←DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)←DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)←DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)←DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)←DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)←DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)←DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)←DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)←AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)←NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)←DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:169)←FutureTask.run(FutureTask.java:264)←DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)←DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)←DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)←Factories$1.create(Factories.java:31)←DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)←DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)←DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:114)←DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)←DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)←Executors$RunnableAdapter.call(Executors.java:539)←FutureTask.run(FutureTask.java:264)←ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)←ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)←ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)←ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)←Thread.run(Thread.java:833)`&#xA;&#xA;You can run with --stacktrace or set environment variable `LINT_PRINT_STACKTRACE=true` to dump a full stacktrace to stdout.">
+        <location
+            file="src/main/java/com/example/weatherapplication/MainActivity.kt"/>
+    </issue>
+
+    <issue
+        id="ScrollViewSize"
+        message="This LinearLayout should use `android:layout_height=&quot;wrap_content&quot;`"
+        errorLine1="            android:layout_height=&quot;match_parent&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="SimpleDateFormat"
+        message="To get local formatting use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()`, or use `new SimpleDateFormat(String template, Locale locale)` with for example `Locale.US` for ASCII dates."
+        errorLine1="        val dateFormat = SimpleDateFormat(&quot;HH::mm&quot;)"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/weatherapplication/adapter/WeatherNow.kt"
+            line="72"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.9.0 is available: 1.12.0"
+        errorLine1="    implementation(&quot;androidx.core:core-ktx:1.9.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="52"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.9.0 is available: 1.10.0"
+        errorLine1="    implementation (&quot;com.google.android.material:material:1.9.0&quot;)"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="71"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="UseCompoundDrawables"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable"
+        errorLine1="            &lt;LinearLayout"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="62"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_200&quot;>#FFBB86FC&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.blue` appears to be unused"
+        errorLine1="    &lt;color name=&quot;blue&quot;>#29B6F6&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="11"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.customdrwaablw` appears to be unused"
+        errorLine1="&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; >"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/customdrwaablw.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.info` appears to be unused">
+        <location
+            file="src/main/res/drawable/info.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.search_icon` appears to be unused"
+        errorLine1="&lt;vector android:height=&quot;24dp&quot; android:tint=&quot;#FFFFFF&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/search_icon.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `RelativeLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="            &lt;RelativeLayout"
+        errorLine2="             ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="27"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/bg.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/bg.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/clouds.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/clouds.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/cloudsandsun.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/cloudsandsun.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/cloudy.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/cloudy.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/humidity.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/humidity.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/info.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/info.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/moon.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/moon.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/night.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/night.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/rain.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/rain.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/raincloud.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/raincloud.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/rainsun.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/rainsun.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/snowfall.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/snowfall.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/stormcloud.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/stormcloud.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/sun.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/sun.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/threecloud.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/threecloud.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/thunderstorm.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/thunderstorm.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/wave.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/wave.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/wind.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/wind.png"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                        &lt;ImageView"
+        errorLine2="                         ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="69"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                                &lt;ImageView"
+        errorLine2="                                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="119"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                                &lt;ImageView"
+        errorLine2="                                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="156"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                                &lt;ImageView"
+        errorLine2="                                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="192"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todayhourlylist.xml"
+            line="27"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="            &lt;ImageView"
+        errorLine2="             ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="33"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                &lt;ImageView"
+        errorLine2="                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="69"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                &lt;ImageView"
+        errorLine2="                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="104"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="                &lt;ImageView"
+        errorLine2="                 ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="145"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        holder.temp.text = &quot;$temperatureFormatted °C&quot;"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/weatherapplication/adapter/ForecastApt.kt"
+            line="72"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;10%&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;10%&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="131"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Chance of rain&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;Chance of rain&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="138"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;10%&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;10%&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="167"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Wind Speed&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;Wind Speed&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="174"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;10%&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;10%&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="203"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Humidity&quot;, should use `@string` resource"
+        errorLine1="                                    android:text=&quot;Humidity&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="210"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Today&apos;s Forecast&quot;, should use `@string` resource"
+        errorLine1="                            android:text=&quot;Today&apos;s Forecast&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="235"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;5 Days >&quot;, should use `@string` resource"
+        errorLine1="                            android:text=&quot;5 Days >&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="245"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;11:00&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;11:00&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todayhourlylist.xml"
+            line="15"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;21&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;21&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todayhourlylist.xml"
+            line="42"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;27th May, Mon&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;27th May, Mon&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="27"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;20 C&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;20 C&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="47"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Overcast&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Overcast&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="82"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;10%&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;10%&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="115"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Wind Speed&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Wind Speed&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="123"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;10%&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;10%&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="157"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Humidity&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Humidity&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/upcomingforecast.xml"
+            line="165"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;10dp&quot;` to better support right-to-left layouts"
+        errorLine1="                            android:layout_marginRight=&quot;10dp&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="246"
+            column="29"/>
+    </issue>
+
+</issues>
